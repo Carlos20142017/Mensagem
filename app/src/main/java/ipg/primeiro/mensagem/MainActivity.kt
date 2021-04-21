@@ -19,11 +19,18 @@ class MainActivity : AppCompatActivity() {
         botao= findViewById(R.id.buttonEnviar)
         editTextEntrada= findViewById(R.id.editTextTextNome)
         textViewSaida= findViewById(R.id.textViewSaida)
-    }
 
-    fun enviar(){
-        botao.setOnClickListener(View.OnClickListener {
-            
+        botao.setOnClickListener(object: View.OnClickListener {
+            override fun onClick(v: View?) {
+                mostrar()
+            }
+
         })
+
+
+}
+    fun mostrar(){
+        val texto = editTextEntrada.toString()
+        textViewSaida.setText(texto)
     }
 }
