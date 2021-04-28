@@ -18,11 +18,13 @@ class MainActivity : AppCompatActivity() {
 }
 
     private val Export_Messagem = "Mensagem"
+    private val Export_Data = "Data"
 
 
     fun enviarMensagem(view: View) {
         val editTextMensagem = findViewById<EditText>(R.id.editTextTextNome)
         val mensagem = editTextMensagem.text.toString()
+
 
         if(mensagem.isBlank()){
             editTextMensagem.error = getString(R.string.mensagem_vazia)
@@ -30,7 +32,9 @@ class MainActivity : AppCompatActivity() {
         }
         val intent = Intent(this,MostrarMensagemActivity::class.java)
         intent.putExtra(Export_Messagem, mensagem)
+
         startActivity(intent)
     }
+
 
 }
